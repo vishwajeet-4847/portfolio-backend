@@ -4,15 +4,19 @@ const config = require("dotenv");
 // Load env variables
 config.config();
  // Set up Nodemailer transporter
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: process.env.USER_EMAIL,
-    pass: process.env.USER_PASSWORD,
-  },
-});
+
 
 const SendMail = (name, email, message, phoneNumber) => {
+
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: process.env.USER_EMAIL,
+      pass: process.env.USER_PASSWORD,
+    },
+  });
+  console.log(process.env.USER_EMAIL);
+  
  
  console.log("i am in send mail");
  
