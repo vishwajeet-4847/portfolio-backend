@@ -15,7 +15,7 @@ const SendMail = (name, email, message, phoneNumber) => {
       pass: process.env.USER_PASSWORD,
     },
   });
-  console.log(process.env.USER_EMAIL);
+ 
   
  
  console.log("i am in send mail");
