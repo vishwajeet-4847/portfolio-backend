@@ -13,6 +13,8 @@ app.use((req, res, next) => {
 
 app.post('/submit-form', (req, res) => {
   const { name, email, phone, message } = req.body;
+  console.log(name, email, phone);
+  
  
   
   if (!name || !email || !phone || !message) {
