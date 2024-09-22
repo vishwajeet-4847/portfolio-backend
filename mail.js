@@ -14,6 +14,7 @@ const transporter = nodemailer.createTransport({
 
 const SendMail = (name, email, message, phoneNumber) => {
  
+ console.log("i am in send mail");
  
 
   // Set up email options
