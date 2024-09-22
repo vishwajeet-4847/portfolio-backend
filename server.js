@@ -3,6 +3,9 @@ const app = express();
 const port = 5000;
 const cors = require('cors');
 const SendMail = require('./mail.js');
+const bodyParser = require('body-parser');
+
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(express.json());
 app.use(cors());
@@ -23,9 +26,12 @@ app.post('/submit-form', (req, res) => {
   }
 
   SendMail(name, email, phone, message);
-  
+ 
   // Simulate form submission success
   res.status(200).json({ success: 'Form submitted successfully!' });
+});
+app.get('/', (req, res) => {
+  res.send("");
 });
 
 app.listen(port, () => {
